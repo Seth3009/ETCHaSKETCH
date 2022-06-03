@@ -1,0 +1,63 @@
+/* .canvas {
+  margin-top: 25px;
+  margin-right: 40px;
+  display: inline-grid;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+  border: 5px solid black;
+  border-radius: 5px;
+  height: 575px;
+  width: 575px;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #efefef;
+}
+
+.canvas {
+  position: relative;
+  margin: 40px auto;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  border-radius: 2px;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+}
+
+.canvas::before,
+.canvas::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.7);
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.canvas::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.canvas::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.canvas:hover::before,
+.canvas:hover::after {
+  box-shadow: 0 2px 14px rgba(0,0,0,.4);
+}
+
+.canvas:hover::before {
+  left: 5px;
+}
+
+.canvas:hover::after {
+  right: 5px;
+}
