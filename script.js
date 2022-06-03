@@ -1,5 +1,6 @@
 const canvas = document.querySelector('.canvas');
 
+
 // Draw square inside canvas
 function createSquare(){
   for(let i = 0; i < 256; i++){
@@ -27,4 +28,7 @@ function updateCanvas() {
   console.log(16);
 };
 
+canvas.addEventListener('mousedown', (e) => {
+  e.target.classList.replace('square','color');
+})
 createSquare();
