@@ -1,9 +1,11 @@
 const canvas = document.querySelector('.canvas');
+const resetbtn = document.querySelector('.reset');
 let isDrawing = false;
 
 
 // Draw square inside canvas
 function createSquare(){
+  canvas.innerHTML = '';
   for(let i = 0; i < 256; i++){
     let div = document.createElement('div');
     div.classList.add('square');
@@ -35,7 +37,10 @@ canvas.addEventListener('mousemove', (e) => {
   e.target.classList.replace('square','color');
 })
 
+resetbtn.addEventListener('click', createSquare);
+
 canvas.addEventListener('mousedown', () => isDrawing = true);
 canvas.addEventListener('mouseup', () => isDrawing = false);
+
 
 createSquare();
