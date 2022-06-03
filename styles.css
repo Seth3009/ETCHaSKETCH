@@ -1,14 +1,13 @@
-/* .canvas {
-  margin-top: 25px;
-  margin-right: 40px;
+.canvas {
+  margin: 40px auto;
   display: inline-grid;
+  position: relative;
   grid-template-columns: repeat(16, 2fr);
   grid-template-rows: repeat(16, 2fr);
-  border: 5px solid black;
-  border-radius: 5px;
-  height: 575px;
-  width: 575px;
-} */
+  background: #fff;
+  height: 500px;
+  width: 500px;
+}
 
 body {
   margin: 0;
@@ -16,15 +15,9 @@ body {
   background: #efefef;
 }
 
-.canvas {
-  position: relative;
-  margin: 40px auto;
-  width: 500px;
-  height: 500px;
-  background: #fff;
-  border-radius: 2px;
-  grid-template-columns: repeat(16, 2fr);
-  grid-template-rows: repeat(16, 2fr);
+.container{
+  display: flex;
+  justify-content: center;
 }
 
 .canvas::before,
@@ -60,4 +53,9 @@ body {
 
 .canvas:hover::after {
   right: 5px;
+}
+
+.square {
+  background-color: white;
+  border: 1px solid black;
 }
