@@ -1,4 +1,5 @@
 const canvas = document.querySelector('.canvas');
+let isDrawing = false;
 
 
 // Draw square inside canvas
@@ -10,6 +11,7 @@ function createSquare(){
   }
 }
 
+const square = document.querySelector('div');
 function updateCanvas() {
   canvas.innerHTML = "";
   canvas.style.setProperty(
@@ -28,7 +30,12 @@ function updateCanvas() {
   console.log(16);
 };
 
-canvas.addEventListener('mousedown', (e) => {
+canvas.addEventListener('mousemove', (e) => {
+  if(!isDrawing) return;
   e.target.classList.replace('square','color');
 })
+
+canvas.addEventListener('mousedown', () => isDrawing = true);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+
 createSquare();
